@@ -44,24 +44,8 @@ public class StudentService implements CrudRepository<Student>, StudentRepositor
 
         try {
             entityManager.getTransaction().begin();
-            Student foundStudent = entityManager.createQuery("from Student s where s.name =: name", Student.class).setParameter("name", student.getName()).getSingleResult();
+            Student foundStudent = entityManager.createQuery("from Student s where s.studentName =: studentName", Student.class).setParameter("studentName", student.getStudentName()).getSingleResult();
             entityManager.remove(foundStudent);
-            entityManager.getTransaction().commit();
-        }catch (Exception e){
-            entityManager.getTransaction().rollback();
-        }finally {
-            EntityManagerUtils.closeEntityManager(entityManager);
-        }
-
-    }
-
-    @Override
-    public void deleteFromDatabase(int id) {
-
-        try {
-            entityManager.getTransaction().begin();
-            Student foundIdOfStudent = entityManager.find(Student.class, id);
-            entityManager.remove(foundIdOfStudent);
             entityManager.getTransaction().commit();
         }catch (Exception e){
             entityManager.getTransaction().rollback();
@@ -77,10 +61,10 @@ public class StudentService implements CrudRepository<Student>, StudentRepositor
         try {
             entityManager.getTransaction().begin();
             Student foundStudent = entityManager.find(Student.class, id);
-            foundStudent.setAddress(student.getAddress());
-            foundStudent.setName(student.getName());
-            foundStudent.setBirthDate(student.getBirthDate());
-            foundStudent.setGender(student.getGender());
+            foundStudent.setStudentAddress(student.getStudentAddress());
+            foundStudent.setStudentName(student.getStudentName());
+            foundStudent.setStudentBirthDate(student.getStudentBirthDate());
+            foundStudent.setStudentGender(student.getStudentGender());
             entityManager.merge(foundStudent);
             entityManager.getTransaction().commit();
         }catch (Exception e){

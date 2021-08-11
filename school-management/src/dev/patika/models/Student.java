@@ -13,54 +13,54 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-    private LocalDate birthDate;
-    private String address;
-    private String gender;
+    private String studentName;
+    private LocalDate studentBirthDate;
+    private String studentAddress;
+    private String studentGender;
 
     @ManyToMany(mappedBy = "students")
     private List<Course> courses = new ArrayList<>();
 
-    public Student(String name, LocalDate birthDate, String address, String gender) {
-        this.name = name;
-        this.birthDate = birthDate;
-        this.address = address;
-        this.gender = gender;
+    public Student(String studentName, LocalDate studentBirthDate, String studentAddress, String studentGender) {
+        this.studentName = studentName;
+        this.studentBirthDate = studentBirthDate;
+        this.studentAddress = studentAddress;
+        this.studentGender = studentGender;
     }
 
     public Student() {
     }
 
-    public String getName() {
-        return name;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
-    public LocalDate getBirthDate() {
-        return birthDate;
+    public LocalDate getStudentBirthDate() {
+        return studentBirthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
+    public void setStudentBirthDate(LocalDate studentBirthDate) {
+        this.studentBirthDate = studentBirthDate;
     }
 
-    public String getAddress() {
-        return address;
+    public String getStudentAddress() {
+        return studentAddress;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setStudentAddress(String studentAddress) {
+        this.studentAddress = studentAddress;
     }
 
-    public String getGender() {
-        return gender;
+    public String getStudentGender() {
+        return studentGender;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setStudentGender(String studentGender) {
+        this.studentGender = studentGender;
     }
 
     public List<Course> getCourses() {
@@ -87,10 +87,10 @@ public class Student {
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
-                ", address='" + address + '\'' +
-                ", gender='" + gender + '\'' +
+                "name='" + studentName + '\'' +
+                ", birthDate=" + studentBirthDate +
+                ", address='" + studentAddress + '\'' +
+                ", gender='" + studentGender + '\'' +
                 '}';
     }
 
