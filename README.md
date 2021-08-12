@@ -9,7 +9,7 @@
 
 ---
 
-![UML diagram](C:\Users\tasde\IdeaProjects\first-homework-TasdemirTolunay\school-management\src\image\SchoolManagementDiagram_.jpg)
+![UML diagram](school-management\src\image\SchoolManagementDiagram_.jpg)
 
 # GittiGidiyor-first-homework
 
