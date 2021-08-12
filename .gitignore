@@ -25,5 +25,3 @@ hs_err_pid*
 #.idea file
 .idea/
 
-#image file
-school-management/src/image
