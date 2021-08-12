@@ -1,3 +1,16 @@
+# Description
+
+---
+
+- Mysql database design of a sample school management system.
+- The project's mysql connection was provided using Hibernate.
+
+# UML diagram of school management system
+
+---
+
+![UML diagram](C:\Users\tasde\IdeaProjects\first-homework-TasdemirTolunay\school-management\src\image\SchoolManagementDiagram_.jpg)
+
 # GittiGidiyor-first-homework
 
 
