@@ -9,7 +9,9 @@
 
 ---
 
-![UML diagram](image\SchoolManagementDiagram_.jpg)
+![UML diagram](image/SchoolManagementDiagram_.jpg)
+
+
 
 # GittiGidiyor-first-homework
 
