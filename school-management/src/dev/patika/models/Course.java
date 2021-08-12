@@ -11,6 +11,7 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String courseName;
     private String courseCode;
     private double creditScore;
