@@ -9,7 +9,7 @@
 
 ---
 
-![UML diagram](image/SchoolManagementDiagram_.jpg)
+![UML diagram](school-management/src/image/SchoolManagementDiagram_.jpg)
 
 
 
