@@ -15,7 +15,7 @@ public class TestClient {
 
     public static void main(String[] args) {
 
-        if(checkTestData() == 0){
+        if(checkDatabase() == 0){
             SaveTestData();
         }
 
@@ -23,28 +23,58 @@ public class TestClient {
         CourseController courseController = new CourseController();
         InstructorController instructorController = new InstructorController();
 
-
-        List<Student> returnedList = studentController.allStudentList();
-        for (Student student : returnedList) {
+        System.out.println("********All Student List********");
+        List<Student> allStudent = studentController.allStudentList();
+        for (Student student : allStudent) {
             System.out.println(student);
         }
 
+        System.out.println("********All Instructor List*******");
         List<Instructor> listInstructor = instructorController.allInstructorList();
         for (Instructor instructor : listInstructor) {
             System.out.println(instructor);
         }
 
+        System.out.println("**********All Course List**********");
         List<Course> listCourses = courseController.allCourseList();
         for (Course course : listCourses) {
             System.out.println(course);
         }
 
+        /*
+        System.out.println("**********Save Student************");
+        Student saveTestStudent = new Student("Ahmet", LocalDate.of(1990, Month.MAY,22),"Trabzon", "Male");
+        studentController.saveStudent(saveTestStudent);
+        System.out.println("Yeni öğrenci kaydı gerçekleşti.....");
+         */
 
+        System.out.println("******Find Student with id******");
+        Student student = studentController.findStudent(2);
+        System.out.println(student);
 
+        System.out.println("********Student's courses***********");
+        List<Course> coursesOfStudent = studentController.coursesOfStudent(1);
+        for (Course course : coursesOfStudent) {
+
+            System.out.println(course);
+
+        }
+
+        System.out.println("*******Find Course with courseId*******");
+        Course findCourse = courseController.findCourse(2);
+        System.out.println(findCourse);
+
+        System.out.println("**********Course's Instructor**********");
+        Instructor instructor = courseController.instructorOfCourse(1);
+        System.out.println(instructor);
+
+        System.out.println("*********Find Instructor with id*********");
+        Instructor findInstructor = instructorController.findInstructor(3);
+        System.out.println(findInstructor);
 
     }
 
-    private static int checkTestData() {
+    private static int checkDatabase() {
         EntityManager em = EntityManagerUtils.getEntityManager("mysqlPU");
         return em.createQuery("from Student ", Student.class).getResultList().size();
     }
